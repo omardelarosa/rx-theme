@@ -4,7 +4,7 @@ class Footer extends React.Component {
   render () {
     return (
         <span className='rx-footer'>
-          "Footer"
+          &copy; 2015 - Recruitics
         </span>
       );
   }

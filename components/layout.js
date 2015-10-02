@@ -28,7 +28,7 @@ class Layout extends React.Component {
                       <div className="content-wrapper">
                           <Alert/>
                           {
-                            this.props.pageComponent ? this.props.pageComponent : <div className='main-panel'>Main Panel</div>
+                            this.props.pageComponent ? this.props.pageComponent : <div className='rx-main-panel'>Main Panel</div>
                           }
                       </div>
                     </section>

@@ -26,4 +26,12 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
+.rx-main-panel {
+  height: 90%;
+}
+
+.rx-footer {
+  height: 5%;
+}
+
 // Custom Overrides Here
