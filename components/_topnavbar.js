@@ -1,4 +1,5 @@
 import React from 'react/addons';
+import { Col } from 'react-bootstrap';
 
 class TopNavbar extends React.Component {
   
@@ -10,7 +11,7 @@ class TopNavbar extends React.Component {
 
   render () {
     return (
-          <nav role="navigation" className="navbar topnavbar">
+          <Col role="navigation" className="navbar topnavbar">
              <div className="navbar-header">
                 <a href="/" className="navbar-brand">
                    <div className="brand-logo">
@@ -63,7 +64,7 @@ class TopNavbar extends React.Component {
                    </li>
                 </ul>
              </div>
-          </nav>  
+          </Col>  
     );
   }
 };

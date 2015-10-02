@@ -3,7 +3,27 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // RxTheme Variables
 @import 'stylesheets/variables';
 @import 'stylesheets/angle-theme-e.scss';
+
 // Load Bootstrap
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
+.outer-grid {
+  padding: 0;
+  .row {
+    padding: 0;
+  }
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.sidebar {
+  position: fixed;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
 
 // Custom Overrides Here
