@@ -17,5 +17,8 @@
     "react": "^0.13.3",
     "react-bootstrap": "^0.25.2",
     "webpack": "^1.12.2"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^3.5.1"
   }
 }

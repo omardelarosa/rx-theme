@@ -7,6 +7,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // Load Bootstrap
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
+$sidebar_width: 10%;
+
 .outer-grid {
   padding: 0;
   .row {
@@ -22,16 +24,24 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   position: fixed;
   padding: 0;
   height: 100%;
+  width: $sidebar_width;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
 
+.content-wrapper {
+  position: fixed;
+  left: $sidebar_width;
+  height: 100%;
+}
+
 .rx-main-panel {
-  height: 90%;
 }
 
 .rx-footer {
   height: 5%;
+  position: fixed;
+  left: $sidebar_width;
 }
 
 // Custom Overrides Here

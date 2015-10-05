@@ -1,12 +1,23 @@
 import React from 'react/addons';
-import {Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 import TopNavbar from './_topnavbar';
 import Sidebar from './_sidebar';
-import OffSidebar from './_offsidebar';
 import Footer from './_footer';
 import Alert from './_alert';
 
+const nullPageComponent = <div className='rx-main-panel'>&nbsp;</div>; 
+
 class Layout extends React.Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {};
+  }
+
+  componentWillReceiveProps() {
+  
+  }
+
   render () {
     return (
       <div className='main-layout'>
@@ -15,31 +26,15 @@ class Layout extends React.Component {
             <TopNavbar mdOffset={0} md={12} />
           </Row>
           <Row fill className="main-panel">
-            <Col mdOffset={0} md={2}>
+            <Col mdOffset={0} md={12}>
               <aside className="aside">
                 <Sidebar/>
               </aside>
-            </Col>
-            <Col md={10}>
-              <Grid>
-                <Row>
-                  <Col fill>
-                    <section>
-                      <div className="content-wrapper">
-                          <Alert/>
-                          {
-                            this.props.pageComponent ? this.props.pageComponent : <div className='rx-main-panel'>Main Panel</div>
-                          }
-                      </div>
-                    </section>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={12}>
-                    <Footer/>
-                  </Col>
-                </Row>
-              </Grid>
+              <section className="content-wrapper">
+                  <Alert/>
+                  { this.props.pageComponent }
+                <Footer/>
+              </section>
             </Col>
           </Row>
         </Grid>
@@ -47,5 +42,9 @@ class Layout extends React.Component {
     );
   }
 }
+
+Layout.defaultProps = {
+  pageComponent: nullPageComponent
+};
 
 export default Layout;
