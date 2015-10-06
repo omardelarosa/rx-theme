@@ -1,12 +1,16 @@
 import React from 'react/addons';
 import { Col } from 'react-bootstrap';
+import * as _ from 'lodash';
 
 class TopNavbar extends React.Component {
   
   constructor(props) {
     super(props);
-    this.props.dropdownItems = [ { name: 'one' }, { name: 'two' }, { name: 'three' } ];
     this.state = {};
+  }
+
+  componentWillReceiveProps (props) {
+  
   }
 
   render () {
@@ -15,7 +19,7 @@ class TopNavbar extends React.Component {
              <div className="navbar-header">
                 <a href="/" className="navbar-brand">
                    <div className="brand-logo">
-                      <img alt='Project Logo' width='30px'className="img-responsive" src='https://upload.wikimedia.org/wikipedia/en/8/84/The_Future_Project_Logo.png'/>
+                      <span className="rx-project-name">Project</span>
                   </div>
                 </a>
              </div>
@@ -43,7 +47,7 @@ class TopNavbar extends React.Component {
                                   <span className="sr-only">default</span>
                                 </button>
                                 <ul role="menu" className="dropdown-menu">
-                                  { this.props.dropdownItems.map((item) => <li><a href="#">{item.name}</a></li> ) }
+                                  { this.props.dropdownItems.map((item, idx) => <li key={ idx }><a href="#">{item.name}</a></li> ) }
                                 </ul>
                                 </div>
                               );
@@ -67,6 +71,9 @@ class TopNavbar extends React.Component {
           </Col>  
     );
   }
+}
+TopNavbar.defaultProps = {
+  dropdownItems: [ { name: 'one' }, { name: 'two' }, { name: 'three' } ]
 };
 
 export default TopNavbar;

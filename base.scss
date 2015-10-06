@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 // RxTheme Variables
 @import 'stylesheets/variables';
-@import 'stylesheets/angle-theme-e.scss';
+@import 'stylesheets/theme-e.scss';
 
 // Load Bootstrap
 @import 'node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
@@ -21,12 +21,17 @@ $sidebar_width: 10%;
 }
 
 .sidebar {
+
   position: fixed;
   padding: 0;
   height: 100%;
   width: $sidebar_width;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  
+  &.closed {
+    width: $sidebar_width/3;
+  }
 }
 
 .content-wrapper {
@@ -35,7 +40,14 @@ $sidebar_width: 10%;
   height: 100%;
 }
 
-.rx-main-panel {
+.navbar-brand {
+
+  .rx-project-name {
+    color: #fff;
+    font-size: 2.0em;
+    padding: 5%;
+  }
+
 }
 
 .rx-footer {
