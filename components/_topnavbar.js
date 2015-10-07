@@ -73,7 +73,7 @@ class TopNavbar extends React.Component {
   }
 }
 TopNavbar.defaultProps = {
-  dropdownItems: [ { name: 'one' }, { name: 'two' }, { name: 'three' } ]
+  dropdownItems: [ { name: 'one' }, { name: 'two' }, { name: 'three' }, { name: 'four'} ]
 };
 
 export default TopNavbar;

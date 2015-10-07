@@ -7,6 +7,31 @@ import Alert from './_alert';
 
 const nullPageComponent = <div className='rx-main-panel'>&nbsp;</div>; 
 
+var items = [
+  {
+    href: "#",
+    name: "Item 1",
+    handlerName: "toggle"
+  },
+  {
+    href: "#",
+    name: "Item 2",
+    handlerName: "toggle"
+  },
+  {
+    href: "#",
+    name: "Item 3",
+    handlerName: "toggle",
+    children: [
+      { 
+        name: "Item 3a",
+        href: "#",
+        handlerName: "toggle"
+      } 
+    ]
+  }
+];
+
 class Layout extends React.Component {
   constructor (props) {
     super(props);
@@ -28,7 +53,7 @@ class Layout extends React.Component {
           <Row fill className="main-panel">
             <Col mdOffset={0} md={12}>
               <aside className="aside">
-                <Sidebar/>
+                <Sidebar items={items}/>
               </aside>
               <section className="content-wrapper">
                   <Alert/>
