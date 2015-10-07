@@ -7,7 +7,8 @@ import Alert from './_alert';
 
 const nullPageComponent = <div className='rx-main-panel'>&nbsp;</div>; 
 
-var items = [
+// Example dropdown and menu items
+const sidebarItems = [
   {
     href: "#",
     name: "Item 1",
@@ -32,6 +33,21 @@ var items = [
   }
 ];
 
+const dropdownItems = [
+  { 
+    name: 'one', 
+    href: '#' 
+  },
+  { 
+    name: 'two', 
+    href: '#' 
+  }, 
+  { 
+    name: 'three', 
+    href: '#' 
+  }
+];
+
 class Layout extends React.Component {
   constructor (props) {
     super(props);
@@ -44,19 +60,20 @@ class Layout extends React.Component {
   }
 
   render () {
+    var projectLogo = this.props.projectLogoComponent || (<span className='rx-project-name'>{this.props.projectName}</span>);
     return (
       <div className='main-layout'>
         <Grid className='outer-grid' fluid>
           <Row fill className="topnavbar-wrapper">
-            <TopNavbar mdOffset={0} md={12} />
+            <TopNavbar mdOffset={0} md={12} projectLogo={ projectLogo } dropdownItems={ this.props.dropdownItems }/>
           </Row>
           <Row fill className="main-panel">
             <Col mdOffset={0} md={12}>
               <aside className="aside">
-                <Sidebar items={items}/>
+                <Sidebar items={this.props.sidebarItems}/>
               </aside>
               <section className="content-wrapper">
-                  <Alert/>
+                <Alert/>
                   { this.props.pageComponent }
                 <Footer/>
               </section>
@@ -69,7 +86,9 @@ class Layout extends React.Component {
 }
 
 Layout.defaultProps = {
-  pageComponent: nullPageComponent
+  pageComponent: nullPageComponent,
+  sidebarItems: sidebarItems,
+  dropdownItems: dropdownItems
 };
 
 export default Layout;

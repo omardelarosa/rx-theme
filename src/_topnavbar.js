@@ -18,8 +18,8 @@ class TopNavbar extends React.Component {
           <Col role="navigation" className="navbar topnavbar">
              <div className="navbar-header">
                 <a href="/" className="navbar-brand">
-                   <div className="brand-logo">
-                      <span className="rx-project-name">Project</span>
+                  <div className="brand-logo">
+                    { this.props.projectLogo }
                   </div>
                 </a>
              </div>
@@ -47,7 +47,11 @@ class TopNavbar extends React.Component {
                                   <span className="sr-only">default</span>
                                 </button>
                                 <ul role="menu" className="dropdown-menu">
-                                  { this.props.dropdownItems.map((item, idx) => <li key={ idx }><a href="#">{item.name}</a></li> ) }
+                                  { 
+                                    this.props.dropdownItems.map((item, idx) => {
+                                      return <li key={ idx }><a href={item.href}>{item.name}</a></li> 
+                                    }) 
+                                  }
                                 </ul>
                                 </div>
                               );
@@ -73,7 +77,7 @@ class TopNavbar extends React.Component {
   }
 }
 TopNavbar.defaultProps = {
-  dropdownItems: [ { name: 'one' }, { name: 'two' }, { name: 'three' }, { name: 'four'} ]
+  dropdownItems: [],
 };
 
 export default TopNavbar;
