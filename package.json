@@ -1,9 +1,11 @@
 {
   "name": "rx-ui",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +16,7 @@
     "babel-loader": "^5.3.2",
     "babel-runtime": "^5.8.25",
     "bootstrap-sass": "^3.3.5",
+    "core-js": "^1.2.1",
     "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-bootstrap": "^0.25.2",
@@ -21,6 +24,7 @@
     "webpack": "^1.12.2"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
     "eslint-plugin-react": "^3.5.1"
   }
 }
